@@ -1,4 +1,4 @@
-# Round 3 — same fabric, BGP-weighted set
+# Fault set #3 — same fabric, BGP-weighted set
 
 Topology, addressing and design intent unchanged. See `README.md`.
 Baseline reference stays `verify/expected-state.md`.

@@ -48,25 +48,7 @@ Footprint: ~12.5 GB RAM, ~7 vCPU (6x cEOS at 2 GB / 1 vCPU, 6x endpoints at
 
 ## Topology
 
-```
-                     AS 65001                             AS 65002
-                  +-------------+                     +-------------+
-                  | dc1-spine1  |                     | dc1-spine2  |
-                  | 10.0.0.101  |                     | 10.0.0.102  |
-                  +-+--+--+--+--+                     +-+--+--+--+--+
-               Et1 /  |  |   \ Et4                 Et1 /  |  |   \ Et4
-                  / Et2  Et3  \                       / Et2  Et3  \
-                 /    |  |     \                     /    |  |     \
-            Et1 /  Et1|  |Et1   \ Et1           Et2 /  Et2|  |Et2   \ Et2
-        +--------+ +--------+ +--------+ +--------+
-        | leaf1  | | leaf2  | | leaf3  | | leaf4  |
-        | 65101  | | 65102  | | 65103  | | 65104  |
-        |10.0.0.1| |10.0.0.2| |10.0.0.3| |10.0.0.4|
-        +-+----+-+ +---+----+ +-+----+-+ +---+----+
-      Et3 |   Et4|      |Et3    Et3|  |Et4    |Et3
-          h1     h5     h2         h3 h6      h4
-       v10/.11 v20/.11 v10/.12  v20/.13 v10/.13 v20/.14
-```
+![EVPN Fabric Topology](diagrams/diagram.png)
 
 Endpoint addressing (all /24, host MTU 9000):
 
@@ -129,7 +111,7 @@ standby. One leaf uplink is currently drained in the control plane for a
 scheduled optics replacement, so an asymmetry in underlay path selection for
 that node is expected and correct.
 
-## Reported symptoms (NOC handoff, 02:10)
+## Reported symptoms - Fault set #1
 
 > Overnight change window closed at 01:40. Since then:
 >

@@ -1,4 +1,4 @@
-# Round 2 — same fabric, new fault set
+# Fault set #2 — same fabric, new fault set
 
 Topology, addressing, ASNs, VLAN/VNI/RT plan and design intent are unchanged.
 Read the original `README.md` for all of that. `verify/expected-state.md` is
